@@ -1,0 +1,20 @@
+.container{
+	margin-top: 40px;
+}
+
+.miniavatar {
+	width: 30px;
+}
+
+.tweethecho {
+	margin-padding:30px;
+}
+
+.like{
+	float: left;
+}
+
+.delete{
+	float: right;
+}
+

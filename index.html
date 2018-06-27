@@ -1,0 +1,119 @@
+<!--
+  Mini Twitter:
+  Se pide construir una plataforma tipo Twitter de un sólo usuario:
+  Utilizando sistema de grids se debe dividir el viewport en 2 columnas (Se recomienda Bootstrap):
+  En la columna de la izquierda:
+    - Crear un campo de texto donde el usuario pueda ingresar el texto del tweet
+    - Agregar un botón para confirmar la creación
+    - Incluir una foto de perfil donde se pueda agregar la foto del creador.
+  En la columna de la derecha: Los tweets deben ser enlistados en bloques.
+  (Cada tweet un nuevo row)
+  Cada tweet de la lista debe tener un link que contenga un icono (❤ ) para dar like, un contador de likes (por defecto es cero), un botón para eliminar el tweet y la foto de perfil del creador.
+  Al darle like al tweet:
+    - El icono debe cambiar de color (destacando que ya se le ha hecho click).
+    - El contador de likes debe incrementarse en 1.
+    - En el caso de hacer dos o más clicks, el contador de likes debe seguir incrementándose.
+    - Se debe mantener el cambio de color desde el segundo click en adelante.
+  El botón de eliminar debe remover el tweet de la lista.
+  Se recomienda usar FontAwesome para los iconos.
+-->
+
+<!DOCTYPE html>
+<html>
+<meta charset=“utf-8”>
+<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <link rel=“stylesheet” href=“assets/css/style.css”>
+    <link rel=“shortcut icon” href=“assets/img/logo.png” >
+
+    <title>Mini Twitter</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+        <img src="assets/img/logo.png" width="50" height="50" alt="">
+        </a>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+            
+            <div class="card fotoperfil" style="width: 18rem;">
+                <img class="card-img-top" src="assets/img/avatar.png" alt="Avatar Image">
+                <form>
+                    <div class="form-group">
+                    <label for="exampleFormControlFile1"></label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </form>
+            </div>
+
+            <div class="tweet">
+            <form>
+                <div class="form-group">
+                <label for="formGroupExampleInput"></label>
+                <input type="text" class="form-control col-8" id="formGroupExampleInput" placeholder="Whats happening?"> <button type="button" class="btn btn-outline-primary tweetear">Tweet</button>
+                </div>
+                
+            </form>
+            </div>
+        </div>
+        <div class="col-8">
+        
+       <div class="container">
+            <div class="row">
+                  <div class="col">
+                  <p class="tweethecho"> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                  <div class="info"><i class="far fa-heart like"><span> 0</span></i><i class="fas fa-trash-alt delete"></i></div>
+
+
+                  
+
+                  </div>
+                  
+            </div>
+            <div class="row">
+                  <div class="col">
+                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col">
+                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col">
+                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col">
+                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. </p>
+                  </div>
+            </div>
+        
+    
+   
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src=“https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js” integrity=“sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49” crossorigin=“anonymous”></script>
+    <script src=“https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js” integrity=“sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T” crossorigin=“anonymous”></script>
+    <script>
+      
+    </script>
+</body>
+</html>
