@@ -20,15 +20,11 @@
 
 <!DOCTYPE html>
 <html>
-<meta charset=“utf-8”>
-<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="assets/js/lib/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <link rel=“stylesheet” href=“assets/css/style.css”>
-    <link rel=“shortcut icon” href=“assets/img/logo.png” >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+     <link rel="stylesheet" href="assets/css/style.css">
+     <script src="assets/js/jquery-3.3.1.min.js"></script>
 
     <title>Mini Twitter</title>
   </head>
@@ -42,67 +38,41 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div  class="col-sm-4">
             
-            <div class="card fotoperfil" style="width: 18rem;">
-                <img class="card-img-top" src="assets/img/avatar.png" alt="Avatar Image">
-                <form>
-                    <div class="form-group">
-                    <label for="exampleFormControlFile1"></label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
-                </form>
+            <div>
+            <!--Aqui va a aparecer la imagen-->
+            <img id="image"  src="" alt="">
             </div>
+
+            <form id="uploader" action="">
+            <input type="file">
+            <button class="btn btn-primary upload">Upload</button>
+            </form>
 
             <div class="tweet">
             <form>
                 <div class="form-group">
                 <label for="formGroupExampleInput"></label>
-                <input type="text" class="form-control col-8" id="formGroupExampleInput" placeholder="Whats happening?"> <button type="button" class="btn btn-outline-primary tweetear">Tweet</button>
-                </div>
+                <textarea type="text" id="tweet-text" ></textarea>
+                <button type="button" class="btn btn-outline-primary" id="tweetear">Tweet</button>
+            </div>
+
+
+            
                 
             </form>
             </div>
         </div>
-        <div class="col-8">
+        <div>
         
-       <div class="container">
-            <div class="row">
-                  <div class="col">
-                  <p class="tweethecho"> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. </p>
-                  <div class="info"><i class="far fa-heart like"><span> 0</span></i><i class="fas fa-trash-alt delete"></i></div>
-
-
+       <div class="container col-sm-8">
+            <div class="right" id="timeline">
+              
                   
-
-                  </div>
                   
             </div>
-            <div class="row">
-                  <div class="col">
-                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. </p>
-                  </div>
-            </div>
-            <div class="row">
-                  <div class="col">
-                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. </p>
-                  </div>
-            </div>
-            <div class="row">
-                  <div class="col">
-                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. </p>
-                  </div>
-            </div>
-            <div class="row">
-                  <div class="col">
-                  <p> <img class="miniavatar" src="assets/img/avatar.png" alt="Avatar Image"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. </p>
-                  </div>
-            </div>
+          
         
     
    
@@ -113,7 +83,62 @@
     <script src=“https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js” integrity=“sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49” crossorigin=“anonymous”></script>
     <script src=“https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js” integrity=“sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T” crossorigin=“anonymous”></script>
     <script>
-      
-    </script>
+    jQuery (document).ready (function ($) {
+    var tweetCount = 0;
+
+    //aquí definimos como generar un tweet
+    $("#tweetear").on ("click", function (event) {
+    var tweet = $('#tweet-text').val ();
+    if (!tweet) return;
+    var id = 't'+ tweetCount;
+    tweetCount ++; 
+
+    //aquí definimos donde enviar los tweets hechos y le sumamos algunos elementos
+    $("#timeline").append ('<p id="'+id+'" class="tweet">' + tweet + ' <i class="far fa-heart counter"> 0 <a href="#'+ id +'" class="remove-tweet"><i class="fas fa-trash-alt delete"></i></a></p>');
+    
+    //aquí definimos como y cuando eliminar un tweet
+    $(".remove-tweet").on ("click", function (event) {
+      event.preventDefault ();
+      var id = $(this).attr ("href");
+      $(id).remove ();
+    });
+
+    //aquí definimos como contar y como mostrar este conteo
+    $(".counter").on("click", function(){ //llamando a todos los con clase --> counter
+      var txt = $(this).text(); // this es el elemento o contexto, acá es el objeto que causa el evento
+      var counter = parseInt(txt);
+      console.log(counter + 0);
+      $(this).text(counter + 1).text(numero); //el elemento clickeado  y agregar el numero del conteo
+    });
+
+  });
+});
+
+    //Aqui todo para subir una imagen al avatar y mostrarla en un tweet
+    console.clear(); // Esto limpia la consola
+
+    $("#uploader").submit(function(evt){
+      evt.preventDefault();
+  
+      // Create a reader
+      var reader = new FileReader();
+  
+      // Get the image
+      var file = $(evt.target).find('input[type="file"]').get(0).files[0];
+  
+      reader.readAsDataURL(file);
+  
+      reader.onload = function(e){
+      console.log('Imagen cargada');
+      $("#image").attr("src", e.target.result);
+  };
+
+
+  
+}); 
+
+
+</script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

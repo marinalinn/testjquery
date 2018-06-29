@@ -3,7 +3,7 @@
 }
 
 .miniavatar {
-	width: 30px;
+	width: 40px;
 }
 
 .tweethecho {
@@ -16,5 +16,49 @@
 
 .delete{
 	float: right;
+	margin-left: 20px;
+}
+
+.form-group{
+	margin-top: 30px;
+}
+
+#tweet-text{
+	width: 300px;
+}
+
+#tweetear{
+	margin-left: 3px;
+
+}
+
+.miniavatar{
+	float: left;
+}
+
+.tweet-text{
+	float: left;
+}
+
+.counter{
+	float: right;
+}
+ 
+.delete{
+	float: right;
+}
+
+#timeline {
+	width: 500px;
+	float: left;
+}
+
+#image{
+  max-width: 200px;
+
+}
+
+.upload{
+	margin-top:10px;
 }
 
